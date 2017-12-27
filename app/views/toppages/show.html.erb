@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+      <title>index</title>
+        <link rel="stylesheet" href="./assets/stylesheets/application.scss">
+  </head>
+  <body>
+    <h1>法律自由文検索システム</h1>
+      <div class="row">
+        <div class="col-xs-6">
+          <% @rtd.each do |record|  %>
+            <p><%= record.inner_text %></p>
+          <% end %>
+        </div>
+      </div>
+  </body>
+  <footer>
+    <small>&copy; 2018 HA.</small>
+  </footer>
+</html>

@@ -1,0 +1,41 @@
+@import "materialize/components/color";
+$primary-color: color("blue", "lighten-2") !default;
+$secondary-color: color("yellow", "base") !default;
+@import 'materialize';
+
+h1 {
+  font-size: 30px;
+  text-align: center;
+}
+
+.font {
+    font-size: 15px;
+    color : black;
+}
+
+.box {
+    margin: 50px;
+    border: 5px solid lightgreen;
+    padding: 50px;
+    text-align: center;
+    
+}
+
+.row {
+    margin: 10px;
+    border: 5px solid lightgreen;
+    padding: 5px;
+    
+}
+
+textarea {
+    width: 400px;
+    height: 200px;
+    text-align: left; 
+    margin: auto;
+}
+
+footer {
+    text-align: right;
+    margin: 20px;
+}

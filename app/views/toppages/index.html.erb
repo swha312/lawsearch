@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+      <title>result</title>
+        <link rel="stylesheet" href="./assets/stylesheets/application.scss">
+  </head>
+  <body>
+    <h1>法律自由文検索システム</h1>
+      <div class="box">
+          <%= form_tag("/show", method:"get") do %>
+            <%= text_area_tag(:syntax) %>
+            <%= submit_tag("検索") %>
+          <% end %>
+      </div>
+  </body>
+  <footer>
+    <small>&copy; 2018 HA.</small>
+  </footer>
+</html>
+
