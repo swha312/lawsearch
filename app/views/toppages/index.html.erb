@@ -11,8 +11,8 @@
         <div class="col s12 m12 l6 offset-l3">
           <div class="box">
             <%= form_tag("/show", method:"get") do %>
-              <%= text_area_tag(:syntax) %>
-              <%= submit_tag("検索") %>
+              <%= text_area_tag(:syntax) %> 
+              <%= submit_tag("検索", class:"down") %>　
             <% end %>
           </div>
         </div>  

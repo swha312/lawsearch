@@ -15,10 +15,12 @@ h1 {
 
 .box {
     margin: 50px;
-    margin-right: 20;
-    margin-left: 20;
+    margin-right: 20px;
+    margin-left: 20px;
     border: 5px solid lightgreen;
     padding: 50px;
+    padding-right: 20px;
+    padding-left: 20px;
     text-align: center;
     
 }
@@ -41,3 +43,9 @@ footer {
     text-align: right;
     margin: 20px;
 }
+
+.down {
+    margin-left: 100px;
+    margin-right: 73px;
+    float: right;
+} 
