@@ -12,7 +12,8 @@
           <div class="box">
             <%= form_tag("/show", method:"get") do %>
               <%= text_area_tag(:syntax) %> 
-              <%= submit_tag("検索", class:"down") %>　
+              <div class="clear"></div>
+              <%= submit_tag("検索") %>　
             <% end %>
           </div>
         </div>  
