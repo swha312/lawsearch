@@ -66,3 +66,7 @@ end
 
 gem 'materialize-sass'
 gem 'material_icons' 
+
+group :production do
+  gem 'pg'
+end

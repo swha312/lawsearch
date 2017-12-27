@@ -48,7 +48,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: lawsearch_production
   username: lawsearch
   password: <%= ENV['LAWSEARCH_DATABASE_PASSWORD'] %>
