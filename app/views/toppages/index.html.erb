@@ -2,16 +2,17 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8">
-      <title>result</title>
+      <title>index</title>
         <link rel="stylesheet" href="./assets/stylesheets/application.scss">
   </head>
   <body>
-    <h1>法律自由文検索システム</h1>
+    <h1>法律自由検索システム</h1>
       <div class="row">
         <div class="col s8git m12 l6 offset-s2 offset-l3">
           <div class="box">
+            <p class="example">例示：正当防衛について知りたい。</p>
             <%= form_tag("/show", method:"get") do %>
-              <%= text_area_tag(:syntax) %> 
+              <%= text_area_tag(:syntax) %>
               <div class="clear"></div>
               <%= submit_tag("検索") %>　
             <% end %>
@@ -23,4 +24,3 @@
     <small>&copy; 2018 HA.</small>
   </footer>
 </html>
-

@@ -2,15 +2,21 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8">
-      <title>index</title>
+      <title>result</title>
         <link rel="stylesheet" href="./assets/stylesheets/application.scss">
   </head>
   <body>
-    <h1>法律自由文検索システム</h1>
+    <h1>法律自由検索システム</h1>
       <div class="result">
+        <% if @rtd.any? %>
           <% @rtd.each do |record|  %>
             <p><%= record.inner_text %></p>
           <% end %>
+        <% else %>
+          <p class="error">Keywordではない名詞の数を減らしてください。</p>
+        <% end %>
+        <div class="buttons_text-center">
+          <%= link_to '戻る', '/' %>
         </div>
       </div>
   </body>

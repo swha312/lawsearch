@@ -4,8 +4,8 @@ $secondary-color: color("yellow", "base") !default;
 @import 'materialize';
 
 h1 {
-  font-size: 30px;
-  text-align: center;
+    font-size: 30px;
+    text-align: center;
 }
 
 .font {
@@ -22,7 +22,6 @@ h1 {
     padding-right: 20px;
     padding-left: 20px;
     text-align: center;
-    
 }
 
 .result {
@@ -45,5 +44,21 @@ footer {
 }
 
 .clear {
-   clear: both;
+    clear: both;
 } 
+
+.example {
+    font-size: 8;
+    color: gray;
+    margin: 0;
+    padding: 0;
+}
+
+.error {
+    color: black;
+    text-align: center;
+}
+
+.buttons_text-center {
+    text-align: center;
+}
