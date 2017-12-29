@@ -11,7 +11,13 @@
       <div class="row">
         <div class="col s12 m12 l6 offset-l3">
           <div class="box">
-            <p class="example">例示：正当防衛について知りたい。</p>
+            <div class="example">
+             <p id="underline">調べたい内容を入力すると、該当する法律の条文を表示します。</p>
+             <p>より正確な検索のためには、</p>
+             <p>1．内容と直接的な関連がない名詞の使用は控えてください。</p>
+             <p>2．Keywordとなる言葉を意識しながら文を書いてください。</p>
+             <p id='gray'>（例示：正当防衛について知りたい。）</p>
+            </div>
             <%= form_tag("/show", method:"get") do %>
               <%= text_area_tag(:syntax) %>
               <div class="clear"></div>
