@@ -9,8 +9,14 @@
     <h1>法律自由文検索システム</h1>
       <div class="result">
         <% if @rtd.any? %>
-          <% @rtd.each do |record|  %>
-            <p><%= record.inner_text %></p>
+          <% @rtd.slice(1..-1).each do |record| %>
+          
+          
+            <% lawNum = record.children[5].inner_text %>
+            <% article = record.children[7].inner_text %>
+            <% url = "http://elaws.e-gov.go.jp/api/1/articles;lawNum=#{lawNum};article=#{article}" %>
+  
+            <p><a href="<%= url %>"><%= record.inner_text %></a></p>
           <% end %>
         <% else %>
         <div class="col s12 m12 l6 offset-l3">
