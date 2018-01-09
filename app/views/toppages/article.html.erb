@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+      <title>article</title>
+        <link rel="stylesheet" type="text/css" href="./assets/stylesheets/application.scss">
+  </head>
+  <body>
+    <h1>法律自由文検索システム</h1>
+      <div class="article">
+        <%= @atc.each do |record| %>
+          <p><%= record.inner_text %></p>
+        <% end %>
+      </div>
+  </body>
+  <footer>
+    <small>&copy; 2018 HA.</small>
+  </footer>
+</html>

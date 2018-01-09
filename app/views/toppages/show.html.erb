@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
       <title>result</title>
-        <link rel="stylesheet" href="./assets/stylesheets/application.scss">
+        <link rel="stylesheet" type="text/css" href="./assets/stylesheets/application.scss">
   </head>
   <body>
     <h1>法律自由文検索システム</h1>
@@ -15,8 +15,16 @@
             <% lawNum = record.children[5].inner_text %>
             <% article = record.children[7].inner_text %>
             <% url = "http://elaws.e-gov.go.jp/api/1/articles;lawNum=#{lawNum};article=#{article}" %>
-  
-            <p><a href="<%= url %>"><%= record.inner_text %></a></p>
+           
+          <p class="apple">
+            <%= form_tag("/article", method:"get") do %>
+              <%= hidden_field_tag :lawNum, lawNum %>       
+              <%= hidden_field_tag :article, article %> 
+              <%= submit_tag("選択") %>
+            <%= record.inner_text %>
+            <% end %>
+          </p>
+            
           <% end %>
         <% else %>
         <div class="col s12 m12 l6 offset-l3">

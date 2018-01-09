@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root to: 'toppages#index'
   get 'show', to: 'toppages#show'
   post 'syntax', to: 'toppages#syntax'
+  get 'article', to: 'toppages#article'
 end

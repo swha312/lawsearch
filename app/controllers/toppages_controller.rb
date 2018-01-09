@@ -51,4 +51,25 @@ class ToppagesController < ApplicationController
     @rtd = @rt_page.search('//table[@class="table table-striped table-condensed table-bordered"]//tr')
     
   end
+  
+  def article
+    
+    lawNum = params[:lawNum]
+    article = params[:article]
+    
+    url = "http://elaws.e-gov.go.jp/api/1/articles;lawNum=#{lawNum};article=#{article}"
+  
+    agent = Mechanize.new
+    @page = agent.get(url)
+    @doc = @page.xml.children.children.children.children.inner_text
+     
+    @rtd = Nokogiri::HTML.parse(@doc)
+    @atc = @rtd.children.children.children.children.children.children.children.children
+    
+  end
+  
+  def create
+    @data = Data.build(:contents)
+    @contents = params[:syntax]
+  end
 end
