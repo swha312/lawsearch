@@ -12,6 +12,9 @@
         <%= @atc.each do |record| %>
           <p><%= record.inner_text %></p>
         <% end %>
+        <div class="buttons_text-center">
+          <%= link_to '戻る', :back %>
+        </div>
       </div>
   </body>
   <footer>
