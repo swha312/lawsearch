@@ -27,6 +27,12 @@ class ToppagesController < ApplicationController
       if token.part_of_speech.tag == :NOUN
         @keywords += token.text.content + " "
       end
+      
+      if @kewords == nil
+        if token.part_of_speech.tag == :VERB
+        @keywords += token.text.content + " "
+        end
+      end  
     # [END syntax_from_text]
     end
       
