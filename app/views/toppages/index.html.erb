@@ -19,7 +19,7 @@
              <p id='gray'>（例示：正当防衛について知りたい。）</p>
             </div>
             <%= form_tag("/show", method:"get") do %>
-              <%= text_area_tag(:syntax) %>
+              <%= text_area_tag(:content) %>
               <div class="clear"></div>
               <%= submit_tag("検索") %>　
             <% end %>

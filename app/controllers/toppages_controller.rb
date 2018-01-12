@@ -12,30 +12,36 @@ class ToppagesController < ApplicationController
   def show
     # [START syntax_from_text]
     # text_content = "Text to analyze syntax of"
-    text_content = params[:syntax]
+    text_content = params[:content]
+    
+    # 検索クエリのDBへの保存
+    @data = Datum.new(contents: text_content)
+    @data.save
+    
+    
     language = Google::Cloud::Language.new
     response = language.analyze_syntax content: text_content, type: :PLAIN_TEXT
     tokens = response.tokens
     
-    # binding.pry
     
     @keywords = ''
   
     tokens.each do |token|
       # @keywords = token.text.content
       # もしも、中身がNOUNだったら、ハッシュに追加していく
-      if token.part_of_speech.tag == :NOUN
-        @keywords += token.text.content + " "
-      end
-      
-      if @kewords == nil
-        if token.part_of_speech.tag == :VERB
-        @keywords += token.text.content + " "
+        if token.part_of_speech.tag == :NOUN
+          @keywords += token.text.content + " "
         end
-      end  
-    # [END syntax_from_text]
-    end
       
+        if @keywords != ""
+          
+        else
+          if token.part_of_speech.tag == :VERB
+            @keywords += token.text.content + " "
+          end
+        end
+    end      
+    # [END syntax_from_text]  
     #binding.pry
   
     # tokenの中に含まれているキーワードに特定の言葉があれば、それを使って、検索する
@@ -71,11 +77,5 @@ class ToppagesController < ApplicationController
      
     @rtd = Nokogiri::HTML.parse(@doc)
     @atc = @rtd.children.children.children.children.children.children.children.children
-    
-  end
-  
-  def create
-    @data = Data.build(:contents)
-    @contents = params[:syntax]
   end
 end
