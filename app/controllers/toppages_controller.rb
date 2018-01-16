@@ -77,5 +77,6 @@ class ToppagesController < ApplicationController
      
     @rtd = Nokogiri::HTML.parse(@doc)
     @atc = @rtd.children.children.children.children.children.children.children.children
+    
   end
 end
