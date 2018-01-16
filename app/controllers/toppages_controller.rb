@@ -28,7 +28,6 @@ class ToppagesController < ApplicationController
   
     tokens.each do |token|
       # @keywords = token.text.content
-      # もしも、中身がNOUNだったら、ハッシュに追加していく
         if token.part_of_speech.tag == :NOUN
           @keywords += token.text.content + " "
         end
@@ -43,9 +42,6 @@ class ToppagesController < ApplicationController
     end      
     # [END syntax_from_text]  
     #binding.pry
-  
-    # tokenの中に含まれているキーワードに特定の言葉があれば、それを使って、検索する
-    # tokenの中に特定のキーワードが含まれているかをチェックする処理
     
     agent = Mechanize.new
     @page = agent.get('http://elaws.e-gov.go.jp/search/elawsSearch/elaws_search/lsg0100')
